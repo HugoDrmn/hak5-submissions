@@ -33,7 +33,7 @@
 ############################################################################################################################################################
 
 # Download Sound (When using your own link "dl=0" needs to be changed to "dl=1")
-iwr https:// <Your DropBox shared link intended for file> ?dl=1 -O $env:TMP\e.wav
+iwr https://github.com/I-Am-Jakoby/hak5-submissions/blob/main/RubberDucky/Payloads/RD-JumpScare/female_scream.wav?dl=1 -O $env:TMP\e.wav
 
 ############################################################################################################################################################
 
