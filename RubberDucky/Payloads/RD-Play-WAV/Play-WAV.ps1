@@ -33,7 +33,7 @@
 ############################################################################################################################################################
 
 # Download Sound (When using your own link "dl=0" needs to be changed to "dl=1")
-iwr https://github.com/I-Am-Jakoby/hak5-submissions/blob/main/OMG/Payloads/OMG-JumpScare/female_scream.wav?raw=true?dl=1 -O $env:TMP\e.wav
+iwr https://github.com/HugoDrmn/hak5-submissions/blob/main/RubberDucky/Payloads/RD-Play-WAV/soundTroll.wav?raw=true?dl=1 -O $env:TMP\e.wav
 
 ############################################################################################################################################################
 
