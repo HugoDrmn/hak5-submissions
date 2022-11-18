@@ -33,7 +33,7 @@
 ############################################################################################################################################################
 
 # Download Sound (When using your own link "dl=0" needs to be changed to "dl=1")
-iwr https://github.com/HugoDrmn/hak5-submissions/blob/main/RubberDucky/Payloads/RD-Play-WAV/SoundTroll.wav?raw=true?dl=1 -O $env:TMP\e.wav
+iwr https://github.com/HugoDrmn/hak5-submissions/blob/main/RubberDucky/Payloads/RD-Play-WAV/SoundTrollv2.wav?raw=true?dl=1 -O $env:TMP\e.wav
 
 ############################################################################################################################################################
 
